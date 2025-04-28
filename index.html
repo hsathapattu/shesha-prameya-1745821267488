@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය - ටියුට් එක</title>
+    <style>
+        body {
+            font-family: 'Iskoola Pota', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            background-color: #4b2e83;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: #4b2e83;
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+        
+        h2 {
+            border-bottom: 2px solid #4b2e83;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            margin-top: 20px;
+            color: #6747a6;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4b2e83;
+        }
+        
+        .example {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #4b2e83;
+            margin-bottom: 10px;
+        }
+        
+        .solution {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #6747a6;
+        }
+        
+        .formula {
+            font-style: italic;
+            background-color: #e9e4f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .note {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #ffd700;
+            margin: 10px 0;
+        }
+        
+        .steps {
+            margin-left: 20px;
+        }
+        
+        .steps li {
+            margin-bottom: 8px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        button {
+            background-color: #4b2e83;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        
+        button:hover {
+            background-color: #6747a6;
+        }
+        
+        .practice {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e4f0;
+            border-radius: 5px;
+        }
+        
+        .practice-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-box {
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #4b2e83;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය</h1>
+            <p>A/L ගණිතය - ටියුට් එක</p>
+        </header>
+        
+        <section class="section">
+            <h2>1. ශේෂ ප්‍රමේය (Remainder Theorem)</h2>
+            
+            <div class="formula">
+                f(x) බහුපදයක් (x-a) මගින් බෙදූ විට ලැබෙන ශේෂය f(a) වේ.
+            </div>
+            
+            <h3>සාධනය:</h3>
+            <div class="steps">
+                <p>f(x) බහුපදය (x-a) මගින් බෙදූ විට:</p>
+                <ul>
+                    <li>f(x) = (x-a)q(x) + R</li>
+                    <li>මෙහි q(x) යනු ලබ්ධිය සහ R යනු ශේෂයයි</li>
+                    <li>x = a ආදේශ කරමු: f(a) = (a-a)q(a) + R</li>
+                    <li>f(a) = 0 + R</li>
+                    <li>එබැවින් R = f(a)</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 1:</div>
+                <p>f(x) = x³ + 2x² - 4x + 2 බහුපදය (x+2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution1')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution1" class="solution hidden">
+                    <ul>
+                        <li>(x+2) = (x-(-2))</li>
+                        <li>ශේෂය f(-2)</li>
+                        <li>f(-2) = (-2)³ + 2(-2)² - 4(-2) + 2</li>
+                        <li>f(-2) = -8 + 8 + 8 + 2 = 10</li>
+                        <li>ශේෂය 10 වේ</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 2:</div>
+                <p>f(x) = 2x³ - x² + 4 බහුපදය (x-1) මගින් බෙදූ විට ලබ්ධිය සහ ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution2')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution2" class="solution hidden">
+                    <ul>
+                        <li>ශේෂය f(1) = 2(1)³ - (1)² + 4 = 2 - 1 + 4 = 5</li>
+                        <li>බෙදුම් ඇල්ගොරිතමය භාවිතයෙන් ලබ්ධිය සොයමු:</li>
+                        <pre>
+      2x² + x + 1
+x-1 ) 2x³ - x² + 0x + 4
+      2x³ - 2x²
+      --------
+          x² + 0x + 4
+          x² - x
+          --------
+              x + 4
+              x - 1
+              --------
+                  5
+                        </pre>
+                        <li>ලබ්ධිය 2x² + x + 1</li>
+                        <li>ශේෂය 5</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="note">
+                <p>සැලකිය යුතුයි: f(x) බහුපදය (ax+b) මගින් බෙදූ විට ශේෂය සොයන්න නම්, x = -b/a ආදේශ කරන්න.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>2. සාධක ප්‍රමේය (Factor Theorem)</h2>
+            
+            <div class="formula">
+                f(a) = 0 නම්, (x-a) යනු f(x) හි සාධකයකි.
+            </div>
+            
+            <h3>සාධනය:</h3>
+            <div class="steps">
+                <ul>
+                    <li>ශේෂ ප්‍රමේයය අනුව, f(x) බහුපදය (x-a) මගින් බෙදූ විට ශේෂය f(a) වේ</li>
+                    <li>f(a) = 0 නම්, ශේෂය 0 වේ</li>
+                    <li>ශේෂය 0 වන බැවින්, (x-a) යනු f(x) හි සාධකයකි</li>
+                    <li>එබැවින් f(x) = (x-a)q(x)</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 1:</div>
+                <p>f(x) = x³ - x - 6 බහුපදයේ (x-2) සාධකයක් දැයි පරීක්ෂා කරන්න.</p>
+                
+                <button onclick="toggleSolution('solution3')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution3" class="solution hidden">
+                    <ul>
+                        <li>f(2) ගණනය කරමු</li>
+                        <li>f(2) = 2³ - 2 - 6 = 8 - 2 - 6 = 0</li>
+                        <li>f(2) = 0 බැවින්, (x-2) යනු f(x) හි සාධකයකි</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 2:</div>
+                <p>f(x) = x³ + 2x² + px + q බහුපදයේ (x-1) හා (x+2) සාධක නම්, p හා q සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution4')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution4" class="solution hidden">
+                    <ul>
+                        <li>f(1) = 0 නම්: 1 + 2 + p + q = 0 → p + q = -3</li>
+                        <li>f(-2) = 0 නම්: -8 + 8 - 2p + q = 0 → -2p + q = 0 → q = 2p</li>
+                        <li>ඉහත සමීකරණ විසඳීමෙන්: p = -1, q = -2</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>3. ඉතිරි සාධක සෙවීම</h2>
+            
+            <div class="steps">
+                <p>පියවර:</p>
+                <ol>
+                    <li>f(x) බහුපදයේ (x-a) සාධකයක් නම්, f(x) = (x-a)g(x) ලෙස ලියත හැක</li>
+                    <li>g(x) = Ax^(n-1) + Bx^(n-2) + ... සාධාරණ ආකාරයේ බහුපදයක් බව උපකල්පනය කරන්න</li>
+                    <li>දෙපැත්ත ගුණ කර සංගුණක සංසන්දනය කරන්න</li>
+                    <li>A, B, C... අගයන් සොයාගන්න</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ:</div>
+                <p>f(x) = x³ - 4x² + x + 6 බහුපදයේ (x-2) සාධකයක් නම්, ඉතිරි සාධකය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution5')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution5" class="solution hidden">
+                    <ol>
+                        <li>f(x) = (x-2)(ax² + bx + c) ලෙස ලියමු</li>
+                        <li>දෙපැත්ත ගුණ කරමු: x³ - 4x² + x + 6 = (x-2)(ax² + bx + c)</li>
+                        <li>සංගුණක සංසන්දනය:
+                            <ul>
+                                <li>x³ සංගුණකය: a = 1</li>
+                                <li>x² සංගුණකය: -2a + b = -4, එබැවින් b = -2</li>
+                                <li>x¹ සංගුණකය: -2b + c = 1, එබැවින් c = -3</li>
+                            </ul>
+                        </li>
+                        <li>ඉතිරි සාධකය: x² - 2x - 3 = (x-3)(x+1)</li>
+                        <li>එබැවින් f(x) = (x-2)(x-3)(x+1)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>4. (x-a)² මගින් බෙදීම</h2>
+            
+            <div class="steps">
+                <p>ක්‍රමය:</p>
+                <ol>
+                    <li>පළමුව f(x) බහුපදය (x-a) මගින් බෙදා ලබ්ධිය q(x) සහ ශේෂය r₁ සොයන්න</li>
+                    <li>ඊළඟට q(x) බහුපදය (x-a) මගින් බෙදා ලබ්ධිය p(x) සහ ශේෂය r₂ සොයන්න</li>
+                    <li>එවිට f(x) = (x-a)²p(x) + (x-a)r₂ + r₁</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ:</div>
+                <p>f(x) = 2x³ - x² + 4 බහුපදය (x-1)² මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution6')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution6" class="solution hidden">
+                    <ol>
+                        <li>පළමුව (x-1) මගින් බෙදීමෙන්:
+                            <ul>
+                                <li>ලබ්ධිය: 2x² + x + 1</li>
+                                <li>ශේෂය: 5</li>
+                            </ul>
+                        </li>
+                        <li>ඊළඟට ලබ්ධිය (x-1) මගින් බෙදීමෙන්:
+                            <ul>
+                                <li>ලබ්ධිය: 2x + 3</li>
+                                <li>ශේෂය: 4</li>
+                            </ul>
+                        </li>
+                        <li>එබැවින්:
+                            <ul>
+                                <li>f(x) = (x-1)²(2x + 3) + (x-1)(4) + 5</li>
+                                <li>ශේෂය: 4(x-1) + 5 = 4x - 4 + 5 = 4x + 1</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>5. (x-a)(x-b) මගින් බෙදීම</h2>
+            
+            <div class="steps">
+                <p>ක්‍රමය:</p>
+                <ol>
+                    <li>(x-a)(x-b) = x² - (a+b)x + ab ලෙස ගුණ කරන්න</li>
+                    <li>බහුපදය x² - (a+b)x + ab මගින් බෙදා ශේෂය Ax + B ආකාරයේ බව පෙන්වන්න</li>
+                    <li>A, B අගයන් සොයන්න</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ:</div>
+                <p>f(x) = x³ + 2x² + 4x + 2 බහුපදය (x²-1) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('solution7')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution7" class="solution hidden">
+                    <ol>
+                        <li>(x²-1) = (x-1)(x+1)</li>
+                        <li>පළමුව (x-1) මගින් බෙදීමෙන්:
+                            <ul>
+                                <li>ලබ්ධිය: x² + 3x + 7</li>
+                                <li>ශේෂය: 9</li>
+                            </ul>
+                        </li>
+                        <li>ඊළඟට ලබ්ධිය (x+1) මගින් බෙදීමෙන්:
+                            <ul>
+                                <li>ලබ්ධිය: x + 2</li>
+                                <li>ශේෂය: 5</li>
+                            </ul>
+                        </li>
+                        <li>එබැවින්:
+                            <ul>
+                                <li>ශේෂය: 5(x-1) + 9 = 5x - 5 + 9 = 5x + 4</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>6. බහුපද සමීකරණ විසඳීම</h2>
+            
+            <div class="steps">
+                <p>ක්‍රමය:</p>
+                <ol>
+                    <li>f(x) = 0 සමීකරණයේ සාධක සොයන්න</li>
+                    <li>සෑම සාධකයක්ම 0 ට සමාන කර මූල සොයන්න</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ:</div>
+                <p>x³ - 6x² + 11x - 6 = 0 සමීකරණය විසඳන්න.</p>
+                
+                <button onclick="toggleSolution('solution8')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="solution8" class="solution hidden">
+                    <ol>
+                        <li>f(1) = 1 - 6 + 11 - 6 = 0 බැවින්, (x-1) සාධකයකි</li>
+                        <li>f(x) = (x-1)(x² - 5x + 6)</li>
+                        <li>x² - 5x + 6 = (x-2)(x-3)</li>
+                        <li>එබැවින් f(x) = (x-1)(x-2)(x-3)</li>
+                        <li>මූල: x = 1, x = 2, x = 3</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>පුහුණු ගැටලු</h2>
+            
+            <div class="practice">
+                <div class="practice-title">ගැටලුව 1:</div>
+                <p>f(x) = x⁴ - 5x³ + 3x² + 5x - 2 බහුපදය (x-2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('practice1')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="practice1" class="solution hidden">
+                    <p>ශේෂ ප්‍රමේයය අනුව, ශේෂය f(2) වේ.</p>
+                    <p>f(2) = 2⁴ - 5(2)³ + 3(2)² + 5(2) - 2</p>
+                    <p>f(2) = 16 - 40 + 12 + 10 - 2</p>
+                    <p>f(2) = -4</p>
+                    <p>එබැවින් ශේෂය -4 වේ.</p>
+                </div>
+            </div>
+            
+            <div class="practice">
+                <div class="practice-title">ගැටලුව 2:</div>
+                <p>f(x) = 2x³ - 3x² - 11x + 6 බහුපදයේ සාධක සොයන්න.</p>
+                
+                <button onclick="toggleSolution('practice2')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="practice2" class="solution hidden">
+                    <p>පළමුව ඇතැම් අගයන් සඳහා f(x) = 0 දැයි පරීක්ෂා කරමු:</p>
+                    <p>f(1) = 2 - 3 - 11 + 6 = -6 (සාධකයක් නොවේ)</p>
+                    <p>f(-1) = -2 - 3 + 11 + 6 = 12 (සාධකයක් නොවේ)</p>
+                    <p>f(2) = 16 - 12 - 22 + 6 = -12 (සාධකයක් නොවේ)</p>
+                    <p>f(-2) = -16 - 12 + 22 + 6 = 0</p>
+                    <p>f(3) = 54 - 27 - 33 + 6 = 0</p>
+                    <p>f(-2) = 0 හා f(3) = 0 බැවින්, (x+2) හා (x-3) සාධක වේ.</p>
+                    <p>f(x) = 2x³ - 3x² - 11x + 6 = 2(x+2)(x-3)(x-?)</p>
+                    <p>සංගුණක සංසන්දනය කරමින් අවසාන සාධකය (x-1/2) බව සොයාගත හැක.</p>
+                    <p>එබැවින් f(x) = 2(x+2)(x-3)(x-1/2)</p>
+                </div>
+            </div>
+            
+            <div class="practice">
+                <div class="practice-title">ගැටලුව 3:</div>
+                <p>f(x) = x⁴ + x³ - 7x² - x + 6 බහුපදය (x-1)(x+2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <button onclick="toggleSolution('practice3')">විසඳුම පෙන්වන්න</button>
+                
+                <div id="practice3" class="solution hidden">
+                    <p>ශේෂය Ax + B ආකාරයේ වේ.</p>
+                    <p>x = 1 විට: f(1) = 1 + 1 - 7 - 1 + 6 = 0</p>
+                    <p>x = -2 විට: f(-2) = 16 - 8 - 28 + 2 + 6 = -12</p>
+                    <p>A(1) + B = 0 → A + B = 0</p>
+                    <p>A(-2) + B = -12 → -2A + B = -12</p>
+                    <p>මේ සමීකරණ විසඳීමෙන්: A = 4, B = -4</p>
+                    <p>එබැවින් ශේෂය 4x - 4 වේ.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2025 ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය - ටියුට් එක</p>
+            <p>සකස් කළේ: Hasindu Sanahas</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleSolution(id) {
+            var solution = document.getElementById(id);
+            if (solution.classList.contains('hidden')) {
+                solution.classList.remove('hidden');
+            } else {
+                solution.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
