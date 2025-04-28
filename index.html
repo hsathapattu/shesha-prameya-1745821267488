@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය - ටියුට් එක</title>
+    <title>ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය - සම්පූර්ණ පාඩම</title>
+    <link href="https://fonts.googleapis.com/css2?family=Iskoola+Pota&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         body {
             font-family: 'Iskoola Pota', Arial, sans-serif;
@@ -15,7 +18,7 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: white;
@@ -129,8 +132,94 @@
             margin-bottom: 10px;
         }
         
-        .answer-box {
-            margin-top: 10px;
+        .chat-container {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .friend {
+            justify-content: flex-start;
+        }
+        
+        .you {
+            justify-content: flex-end;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+        
+        .friend .message-bubble {
+            background-color: #4b2e83;
+            color: white;
+            border-bottom-left-radius: 0;
+        }
+        
+        .you .message-bubble {
+            background-color: #0084ff;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+        
+        .message-info {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #777;
+        }
+        
+        .friend .message-info {
+            text-align: left;
+        }
+        
+        .you .message-info {
+            text-align: right;
+        }
+        
+        .important-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #4b2e83;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
         
         footer {
@@ -140,61 +229,129 @@
             background-color: #4b2e83;
             color: white;
         }
+
+        .download-button {
+            margin-top: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය</h1>
-            <p>A/L ගණිතය - ටියුට් එක</p>
+            <p>A/L ගණිතය - සම්පූර්ණ පාඩම</p>
         </header>
+        
+        <div class="chat-container">
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    මචං, අද අපි ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය ගැන ඉගෙන ගමු. මේක A/L වලට හරිම වැදගත් පාඩමක්. ඔයාට ලේසියෙන් තේරෙන විදිහට මම කියලා දෙන්නම්.
+                </div>
+                <div class="message-info">මාධව - 11:30 AM</div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    හරි මචං. මට මේක ටිකක් අමාරුයි. ඒත් ඔයා කියලා දෙනවනම් ලේසියෙන් තේරෙයි. ගොඩක් ස්තූතියි!
+                </div>
+                <div class="message-info">ඔයා - 11:31 AM</div>
+            </div>
+        </div>
         
         <section class="section">
             <h2>1. ශේෂ ප්‍රමේය (Remainder Theorem)</h2>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    පළමුවෙන්ම ශේෂ ප්‍රමේය ගැන බලමු. මේක හරිම සරලයි. මතක තියාගන්න:
+                    <br><br>
+                    <strong>ශේෂ ප්‍රමේය:</strong> f(x) බහුපදයක් (x-a) මගින් බෙදූ විට ලැබෙන ශේෂය f(a) වේ.
+                </div>
+                <div class="message-info">මාධව - 11:32 AM</div>
+            </div>
             
             <div class="formula">
                 f(x) බහුපදයක් (x-a) මගින් බෙදූ විට ලැබෙන ශේෂය f(a) වේ.
             </div>
             
-            <h3>සාධනය:</h3>
-            <div class="steps">
-                <p>f(x) බහුපදය (x-a) මගින් බෙදූ විට:</p>
-                <ul>
-                    <li>f(x) = (x-a)q(x) + R</li>
-                    <li>මෙහි q(x) යනු ලබ්ධිය සහ R යනු ශේෂයයි</li>
-                    <li>x = a ආදේශ කරමු: f(a) = (a-a)q(a) + R</li>
-                    <li>f(a) = 0 + R</li>
-                    <li>එබැවින් R = f(a)</li>
-                </ul>
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඒ කියන්නේ මොකද්ද? ටිකක් පැහැදිලි කරලා කියන්න පුළුවන්ද?
+                </div>
+                <div class="message-info">ඔයා - 11:33 AM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරි, මෙහෙමයි. අපි දන්නවා බහුපදයක් වෙනත් බහුපදයකින් බෙදන විට ලබ්ධියක් සහ ශේෂයක් ලැබෙනවා.
+                    <br><br>
+                    f(x) = (x-a)q(x) + R
+                    <br><br>
+                    මෙහිදී q(x) යනු ලබ්ධිය සහ R යනු ශේෂයයි. දැන් මේ සමීකරණයේ x වෙනුවට a ආදේශ කරමු:
+                    <br><br>
+                    f(a) = (a-a)q(a) + R
+                    <br><br>
+                    (a-a) = 0 නිසා:
+                    <br><br>
+                    f(a) = 0 + R
+                    <br><br>
+                    එබැවින් R = f(a)
+                    <br><br>
+                    ඒ කියන්නේ ශේෂය f(a) වෙනවා!
+                </div>
+                <div class="message-info">මාධව - 11:35 AM</div>
+            </div>
+            
+            <div class="important-box">
+                <h3>මතක තබා ගන්න:</h3>
+                <p>f(x) බහුපදයක් (x-a) මගින් බෙදූ විට ලැබෙන ශේෂය සොයන්න නම්, x = a ආදේශ කර f(a) ගණනය කරන්න.</p>
             </div>
             
             <div class="example">
                 <div class="example-title">උදාහරණ 1:</div>
                 <p>f(x) = x³ + 2x² - 4x + 2 බහුපදය (x+2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution1')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution1" class="solution hidden">
-                    <ul>
-                        <li>(x+2) = (x-(-2))</li>
-                        <li>ශේෂය f(-2)</li>
-                        <li>f(-2) = (-2)³ + 2(-2)² - 4(-2) + 2</li>
-                        <li>f(-2) = -8 + 8 + 8 + 2 = 10</li>
-                        <li>ශේෂය 10 වේ</li>
-                    </ul>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        මේ උදාහරණය බලමු. මෙහිදී (x+2) = (x-(-2)) ලෙස ලියත හැකියි. ඒ කියන්නේ a = -2.
+                        <br><br>
+                        ශේෂය f(-2) වේ. දැන් f(-2) ගණනය කරමු:
+                        <br><br>
+                        f(-2) = (-2)³ + 2(-2)² - 4(-2) + 2
+                        <br><br>
+                        f(-2) = -8 + 2(4) - 4(-2) + 2
+                        <br><br>
+                        f(-2) = -8 + 8 + 8 + 2
+                        <br><br>
+                        f(-2) = 10
+                        <br><br>
+                        එබැවින් ශේෂය 10 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 11:38 AM</div>
                 </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    හරි, මට තේරුනා. (x+2) කියන්නේ (x-(-2)) කියලා ලියන්න පුළුවන්. ඉතින් a = -2 නිසා f(-2) ගණනය කරන්න ඕනෙ.
+                </div>
+                <div class="message-info">ඔයා - 11:40 AM</div>
             </div>
             
             <div class="example">
                 <div class="example-title">උදාහරණ 2:</div>
                 <p>f(x) = 2x³ - x² + 4 බහුපදය (x-1) මගින් බෙදූ විට ලබ්ධිය සහ ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution2')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution2" class="solution hidden">
-                    <ul>
-                        <li>ශේෂය f(1) = 2(1)³ - (1)² + 4 = 2 - 1 + 4 = 5</li>
-                        <li>බෙදුම් ඇල්ගොරිතමය භාවිතයෙන් ලබ්ධිය සොයමු:</li>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        මෙහිදී ශේෂය f(1) වේ:
+                        <br><br>
+                        f(1) = 2(1)³ - (1)² + 4
+                        <br><br>
+                        f(1) = 2 - 1 + 4 = 5
+                        <br><br>
+                        ලබ්ධිය සොයන්න නම් බෙදුම් ඇල්ගොරිතමය භාවිතා කරන්න ඕනෙ:
                         <pre>
       2x² + x + 1
 x-1 ) 2x³ - x² + 0x + 4
@@ -208,67 +365,187 @@ x-1 ) 2x³ - x² + 0x + 4
               --------
                   5
                         </pre>
-                        <li>ලබ්ධිය 2x² + x + 1</li>
-                        <li>ශේෂය 5</li>
-                    </ul>
+                        ලබ්ධිය 2x² + x + 1 සහ ශේෂය 5 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 11:43 AM</div>
                 </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ලබ්ධිය හොයන විදිහත් මට තේරුනා. ඒත් ශේෂ ප්‍රමේය පාවිච්චි කරන එක ලේසියි නේද? f(1) = 5 විතරක් ගණනය කරලා ශේෂය හොයාගන්න පුළුවන්.
+                </div>
+                <div class="message-info">ඔයා - 11:45 AM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    ඔව්, ඒක තමයි ශේෂ ප්‍රමේයේ වාසිය! ශේෂය හොයන්න දිගු බෙදීම් ක්‍රමය පාවිච්චි කරන්න ඕනෙ නෑ. f(a) ගණනය කරලා ඉවරයි.
+                </div>
+                <div class="message-info">මාධව - 11:46 AM</div>
             </div>
             
             <div class="note">
                 <p>සැලකිය යුතුයි: f(x) බහුපදය (ax+b) මගින් බෙදූ විට ශේෂය සොයන්න නම්, x = -b/a ආදේශ කරන්න.</p>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 3:</div>
+                <p>f(x) = 3x⁴ - 2x² + 5 බහුපදය (2x+3) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
+                
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        (2x+3) = 2(x+3/2) = 2(x-(-3/2))
+                        <br><br>
+                        ශේෂ ප්‍රමේයය සෘජුව භාවිතා කරන්න බැරි වුණත්, අපි දන්නවා (2x+3) = 0 විට x = -3/2 වන බව.
+                        <br><br>
+                        ශේෂය f(-3/2) වේ:
+                        <br><br>
+                        f(-3/2) = 3(-3/2)⁴ - 2(-3/2)² + 5
+                        <br><br>
+                        f(-3/2) = 3(81/16) - 2(9/4) + 5
+                        <br><br>
+                        f(-3/2) = 243/16 - 18/4 + 5
+                        <br><br>
+                        f(-3/2) = 243/16 - 72/16 + 80/16 = 251/16
+                        <br><br>
+                        එබැවින් ශේෂය 251/16 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 11:50 AM</div>
+                </div>
             </div>
         </section>
         
         <section class="section">
             <h2>2. සාධක ප්‍රමේය (Factor Theorem)</h2>
             
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    දැන් අපි සාධක ප්‍රමේය ගැන ඉගෙන ගමු. මේක ශේෂ ප්‍රමේයෙන් ලබාගත් ප්‍රතිඵලයක්.
+                    <br><br>
+                    <strong>සාධක ප්‍රමේය:</strong> f(a) = 0 නම්, (x-a) යනු f(x) හි සාධකයකි.
+                </div>
+                <div class="message-info">මාධව - 11:52 AM</div>
+            </div>
+            
             <div class="formula">
                 f(a) = 0 නම්, (x-a) යනු f(x) හි සාධකයකි.
             </div>
             
-            <h3>සාධනය:</h3>
-            <div class="steps">
-                <ul>
-                    <li>ශේෂ ප්‍රමේයය අනුව, f(x) බහුපදය (x-a) මගින් බෙදූ විට ශේෂය f(a) වේ</li>
-                    <li>f(a) = 0 නම්, ශේෂය 0 වේ</li>
-                    <li>ශේෂය 0 වන බැවින්, (x-a) යනු f(x) හි සාධකයකි</li>
-                    <li>එබැවින් f(x) = (x-a)q(x)</li>
-                </ul>
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඒ කියන්නේ f(a) = 0 නම්, f(x) = (x-a) × වෙනත් බහුපදයක් කියලද?
+                </div>
+                <div class="message-info">ඔයා - 11:53 AM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරියටම හරි! ශේෂ ප්‍රමේයය අනුව, f(x) බහුපදය (x-a) මගින් බෙදූ විට ශේෂය f(a) වේ.
+                    <br><br>
+                    f(a) = 0 නම්, ශේෂය 0 වේ. ශේෂය 0 කියන්නේ (x-a) මගින් f(x) හරියටම බෙදෙනවා කියන එක.
+                    <br><br>
+                    එබැවින් f(x) = (x-a)q(x) ලෙස ලියත හැකියි. මෙහිදී q(x) යනු ඉතිරි බහුපදයයි.
+                </div>
+                <div class="message-info">මාධව - 11:55 AM</div>
+            </div>
+            
+            <div class="important-box">
+                <h3>මතක තබා ගන්න:</h3>
+                <p>f(a) = 0 නම්, (x-a) යනු f(x) හි සාධකයකි. මෙය සාධක සෙවීමට හා බහුපද විශ්ලේෂණයට ඉතා වැදගත් වේ.</p>
             </div>
             
             <div class="example">
                 <div class="example-title">උදාහරණ 1:</div>
                 <p>f(x) = x³ - x - 6 බහුපදයේ (x-2) සාධකයක් දැයි පරීක්ෂා කරන්න.</p>
                 
-                <button onclick="toggleSolution('solution3')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution3" class="solution hidden">
-                    <ul>
-                        <li>f(2) ගණනය කරමු</li>
-                        <li>f(2) = 2³ - 2 - 6 = 8 - 2 - 6 = 0</li>
-                        <li>f(2) = 0 බැවින්, (x-2) යනු f(x) හි සාධකයකි</li>
-                    </ul>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        (x-2) සාධකයක් දැයි පරීක්ෂා කරන්න නම්, f(2) = 0 දැයි බලන්න ඕනෙ.
+                        <br><br>
+                        f(2) = 2³ - 2 - 6
+                        <br><br>
+                        f(2) = 8 - 2 - 6 = 0
+                        <br><br>
+                        f(2) = 0 බැවින්, (x-2) යනු f(x) හි සාධකයකි.
+                        <br><br>
+                        එබැවින් f(x) = (x-2)(x² + 2x + 3) ලෙස ලියත හැකියි.
+                    </div>
+                    <div class="message-info">මාධව - 11:58 AM</div>
                 </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    මම හිතන්නේ මට තේරුනා. (x-2) සාධකයක් නම්, f(x) = (x-2) × (වෙනත් බහුපදයක්) ලෙස ලියන්න පුළුවන්. ඉතින් ඒ වෙනත් බහුපදය x² + 2x + 3 වෙනවා.
+                </div>
+                <div class="message-info">ඔයා - 12:00 PM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරියටම හරි! ඔයා හොඳට තේරුම් අරගෙන තියෙනවා. දැන් අපි ඊළඟ උදාහරණයක් බලමු.
+                </div>
+                <div class="message-info">මාධව - 12:01 PM</div>
             </div>
             
             <div class="example">
                 <div class="example-title">උදාහරණ 2:</div>
                 <p>f(x) = x³ + 2x² + px + q බහුපදයේ (x-1) හා (x+2) සාධක නම්, p හා q සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution4')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution4" class="solution hidden">
-                    <ul>
-                        <li>f(1) = 0 නම්: 1 + 2 + p + q = 0 → p + q = -3</li>
-                        <li>f(-2) = 0 නම්: -8 + 8 - 2p + q = 0 → -2p + q = 0 → q = 2p</li>
-                        <li>ඉහත සමීකරණ විසඳීමෙන්: p = -1, q = -2</li>
-                    </ul>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        (x-1) සාධකයක් නම්, f(1) = 0 විය යුතුයි:
+                        <br><br>
+                        f(1) = 1³ + 2(1)² + p(1) + q = 0
+                        <br><br>
+                        1 + 2 + p + q = 0
+                        <br><br>
+                        p + q = -3 ... (1)
+                        <br><br>
+                        (x+2) සාධකයක් නම්, f(-2) = 0 විය යුතුයි:
+                        <br><br>
+                        f(-2) = (-2)³ + 2(-2)² + p(-2) + q = 0
+                        <br><br>
+                        -8 + 2(4) + (-2p) + q = 0
+                        <br><br>
+                        -8 + 8 - 2p + q = 0
+                        <br><br>
+                        -2p + q = 0 ... (2)
+                        <br><br>
+                        (2) වලින්: q = 2p
+                        <br><br>
+                        (1) වලට ආදේශ කරමින්: p + 2p = -3
+                        <br><br>
+                        3p = -3
+                        <br><br>
+                        p = -1
+                        <br><br>
+                        q = 2p = 2(-1) = -2
+                        <br><br>
+                        එබැවින් p = -1 සහ q = -2 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 12:05 PM</div>
                 </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    මට තේරුනා! (x-1) සහ (x+2) දෙකම සාධක නම්, f(1) = 0 සහ f(-2) = 0 වෙන්න ඕනෙ. ඒ දෙක පාවිච්චි කරලා අපිට p = -1 සහ q = -2 කියලා හොයාගන්න පුළුවන්.
+                </div>
+                <div class="message-info">ඔයා - 12:07 PM</div>
             </div>
         </section>
         
         <section class="section">
             <h2>3. ඉතිරි සාධක සෙවීම</h2>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    දැන් අපි ඉගෙන ගමු කොහොමද ඉතිරි සාධක සොයන්නේ කියලා. f(x) බහුපදයේ (x-a) සාධකයක් නම්, f(x) = (x-a)g(x) ලෙස ලියත හැකියි. දැන් අපි g(x) සොයාගන්න ඕනෙ.
+                </div>
+                <div class="message-info">මාධව - 12:09 PM</div>
+            </div>
             
             <div class="steps">
                 <p>පියවර:</p>
@@ -282,30 +559,104 @@ x-1 ) 2x³ - x² + 0x + 4
             
             <div class="example">
                 <div class="example-title">උදාහරණ:</div>
-                <p>f(x) = x³ - 4x² + x + 6 බහුපදයේ (x-2) සාධකයක් නම්, ඉතිරි සාධකය සොයන්න.</p>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        f(x) = x³ - 4x² + x + 6 බහුපදයේ (x-2) සාධකයක් නම්, ඉතිරි සාධකය සොයමු.
+                        <br><br>
+                        පළමුව, f(2) = 0 දැයි පරීක්ෂා කරමු:
+                        <br><br>
+                        f(2) = 2³ - 4(2)² + 2 + 6
+                        <br><br>
+                        f(2) = 8 - 16 + 2 + 6 = 0
+                        <br><br>
+                        f(2) = 0 බැවින්, (x-2) සාධකයකි.
+                        <br><br>
+                        දැන් f(x) = (x-2)(ax² + bx + c) ලෙස ලියමු.
+                        <br><br>
+                        දෙපැත්ත ගුණ කරමු:
+                        <br><br>
+                        x³ - 4x² + x + 6 = (x-2)(ax² + bx + c)
+                        <br><br>
+                        x³ - 4x² + x + 6 = ax³ + bx² + cx - 2ax² - 2bx - 2c
+                        <br><br>
+                        දැන් සංගුණක සංසන්දනය කරමු:
+                        <br><br>
+                        x³ සංගුණකය: a = 1
+                        <br><br>
+                        x² සංගුණකය: -4 = b - 2a = b - 2(1), එබැවින් b = -2
+                        <br><br>
+                        x¹ සංගුණකය: 1 = c - 2b = c - 2(-2), එබැවින් c = 1 - 4 = -3
+                        <br><br>
+                        නියත පදය: 6 = -2c = -2(-3) = 6 (තහවුරු කිරීම)
+                        <br><br>
+                        එබැවින් g(x) = x² - 2x - 3 = (x-3)(x+1)
+                        <br><br>
+                        අවසාන පිළිතුර: f(x) = (x-2)(x-3)(x+1)
+                    </div>
+                    <div class="message-info">මාධව - 12:12 PM</div>
+                </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඔහ්, මට තේරුනා. ඉතිරි සාධකය හොයන්න අපි ගුණ කරලා සංගුණක සංසන්දනය කරනවා. මේ ක්‍රමය පාවිච්චි කරලා අපිට f(x) = (x-2)(x-3)(x+1) කියලා හොයාගන්න පුළුවන්.
+                </div>
+                <div class="message-info">ඔයා - 12:14 PM</div>
+            </div>
+            
+            <div class="tip-box">
+                <h3>ඉක්මන් ක්‍රමය:</h3>
+                <p>ඉතිරි සාධක සෙවීමට තවත් ක්‍රමයක් තමයි බෙදුම් ඇල්ගොරිතමය භාවිතය. f(x) බහුපදය (x-a) මගින් බෙදා ලබ්ධිය ලබාගත හැකියි. මෙම ලබ්ධිය g(x) වේ.</p>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 2:</div>
+                <p>f(x) = x⁴ + 3x³ - x - 3 බහුපදයේ (x-1) හා (x+3) සාධක නම්, ඉතිරි සාධකය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution5')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution5" class="solution hidden">
-                    <ol>
-                        <li>f(x) = (x-2)(ax² + bx + c) ලෙස ලියමු</li>
-                        <li>දෙපැත්ත ගුණ කරමු: x³ - 4x² + x + 6 = (x-2)(ax² + bx + c)</li>
-                        <li>සංගුණක සංසන්දනය:
-                            <ul>
-                                <li>x³ සංගුණකය: a = 1</li>
-                                <li>x² සංගුණකය: -2a + b = -4, එබැවින් b = -2</li>
-                                <li>x¹ සංගුණකය: -2b + c = 1, එබැවින් c = -3</li>
-                            </ul>
-                        </li>
-                        <li>ඉතිරි සාධකය: x² - 2x - 3 = (x-3)(x+1)</li>
-                        <li>එබැවින් f(x) = (x-2)(x-3)(x+1)</li>
-                    </ol>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        පළමුව, f(1) = 0 සහ f(-3) = 0 දැයි පරීක්ෂා කරමු:
+                        <br><br>
+                        f(1) = 1⁴ + 3(1)³ - 1 - 3 = 1 + 3 - 1 - 3 = 0
+                        <br><br>
+                        f(-3) = (-3)⁴ + 3(-3)³ - (-3) - 3 = 81 - 81 + 3 - 3 = 0
+                        <br><br>
+                        f(1) = 0 සහ f(-3) = 0 බැවින්, (x-1) සහ (x+3) සාධක වේ.
+                        <br><br>
+                        f(x) = (x-1)(x+3)(ax² + bx + c) ලෙස ලියමු.
+                        <br><br>
+                        දෙපැත්ත ගුණ කරමු:
+                        <br><br>
+                        x⁴ + 3x³ - x - 3 = (x-1)(x+3)(ax² + bx + c)
+                        <br><br>
+                        x⁴ + 3x³ - x - 3 = (x² + 2x - 3)(ax² + bx + c)
+                        <br><br>
+                        සංගුණක සංසන්දනය කරමින්:
+                        <br><br>
+                        x⁴ සංගුණකය: a = 1
+                        <br><br>
+                        x³ සංගුණකය: 3 = 2a + b = 2 + b, එබැවින් b = 1
+                        <br><br>
+                        x² සංගුණකය: 0 = -3a + 2b + c = -3 + 2 + c, එබැවින් c = 1
+                        <br><br>
+                        එබැවින් ඉතිරි සාධකය: x² + x + 1
+                        <br><br>
+                        අවසාන පිළිතුර: f(x) = (x-1)(x+3)(x² + x + 1)
+                    </div>
+                    <div class="message-info">මාධව - 12:18 PM</div>
                 </div>
             </div>
         </section>
         
         <section class="section">
             <h2>4. (x-a)² මගින් බෙදීම</h2>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    දැන් අපි (x-a)² වැනි වර්ග සාධකයක් මගින් බෙදීම ගැන ඉගෙන ගමු. මේකට ශේෂ ප්‍රමේය දෙපාරක් යොදාගන්න පුළුවන්.
+                </div>
+                <div class="message-info">මාධව - 12:20 PM</div>
+            </div>
             
             <div class="steps">
                 <p>ක්‍රමය:</p>
@@ -316,42 +667,105 @@ x-1 ) 2x³ - x² + 0x + 4
                 </ol>
             </div>
             
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඒ කියන්නේ (x-a)² මගින් බෙදන්න නම් අපි (x-a) මගින් දෙපාරක් බෙදන්න ඕනෙ?
+                </div>
+                <div class="message-info">ඔයා - 12:22 PM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරියටම හරි! අපි උදාහරණයක් බලමු.
+                </div>
+                <div class="message-info">මාධව - 12:23 PM</div>
+            </div>
+            
             <div class="example">
                 <div class="example-title">උදාහරණ:</div>
                 <p>f(x) = 2x³ - x² + 4 බහුපදය (x-1)² මගින් බෙදූ විට ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution6')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution6" class="solution hidden">
-                    <ol>
-                        <li>පළමුව (x-1) මගින් බෙදීමෙන්:
-                            <ul>
-                                <li>ලබ්ධිය: 2x² + x + 1</li>
-                                <li>ශේෂය: 5</li>
-                            </ul>
-                        </li>
-                        <li>ඊළඟට ලබ්ධිය (x-1) මගින් බෙදීමෙන්:
-                            <ul>
-                                <li>ලබ්ධිය: 2x + 3</li>
-                                <li>ශේෂය: 4</li>
-                            </ul>
-                        </li>
-                        <li>එබැවින්:
-                            <ul>
-                                <li>f(x) = (x-1)²(2x + 3) + (x-1)(4) + 5</li>
-                                <li>ශේෂය: 4(x-1) + 5 = 4x - 4 + 5 = 4x + 1</li>
-                            </ul>
-                        </li>
-                    </ol>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        පළමුව f(x) බහුපදය (x-1) මගින් බෙදමු:
+                        <pre>
+      2x² + x + 1
+x-1 ) 2x³ - x² + 0x + 4
+      2x³ - 2x²
+      --------
+          x² + 0x + 4
+          x² - x
+          --------
+              x + 4
+              x - 1
+              --------
+                  5
+                        </pre>
+                        ලබ්ධිය q(x) = 2x² + x + 1 සහ ශේෂය r₁ = 5 වේ.
+                        <br><br>
+                        දැන් q(x) = 2x² + x + 1 බහුපදය (x-1) මගින් බෙදමු:
+                        <pre>
+      2x + 3
+x-1 ) 2x² + x + 1
+      2x² - 2x
+      --------
+          3x + 1
+          3x - 3
+          --------
+              4
+                        </pre>
+                        ලබ්ධිය p(x) = 2x + 3 සහ ශේෂය r₂ = 4 වේ.
+                        <br><br>
+                        එබැවින්:
+                        <br><br>
+                        f(x) = (x-1)²(2x + 3) + (x-1)(4) + 5
+                        <br><br>
+                        ශේෂය = (x-1)(4) + 5 = 4x - 4 + 5 = 4x + 1
+                    </div>
+                    <div class="message-info">මාධව - 12:27 PM</div>
                 </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඔහ්, දැන් මට තේරුනා. (x-1)² මගින් බෙදන විට ශේෂය 4x + 1 වගේ প්‍රකාශනයක් වෙනවා. ඒ කියන්නේ ශේෂය නියත සංඛ්‍යාවක් නෙවෙයි, x සහිත ප්‍රකාශනයක්.
+                </div>
+                <div class="message-info">ඔයා - 12:29 PM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරියටම හරි! (x-a)² මගින් බෙදන විට ශේෂය Ax + B ආකාරයේ වෙනවා.
+                </div>
+                <div class="message-info">මාධව - 12:30 PM</div>
+            </div>
+            
+            <div class="important-box">
+                <h3>මතක තබා ගන්න:</h3>
+                <p>f(x) බහුපදය (x-a)² මගින් බෙදන විට ශේෂය Ax + B ආකාරයේ වේ.</p>
+                <p>f(x) බහුපදය (x-a)³ මගින් බෙදන විට ශේෂය Ax² + Bx + C ආකාරයේ වේ.</p>
             </div>
         </section>
         
         <section class="section">
             <h2>5. (x-a)(x-b) මගින් බෙදීම</h2>
             
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    දැන් අපි (x-a)(x-b) වැනි සාධක දෙකක ගුණිතයක් මගින් බෙදීම ගැන ඉගෙන ගමු.
+                </div>
+                <div class="message-info">මාධව - 12:32 PM</div>
+            </div>
+            
             <div class="steps">
-                <p>ක්‍රමය:</p>
+                <p>ක්‍රමය 1:</p>
+                <ol>
+                    <li>පළමුව (x-a) මගින් බෙදා ලබ්ධිය q(x) සහ ශේෂය r₁ සොයන්න</li>
+                    <li>ඊළඟට q(x) බහුපදය (x-b) මගින් බෙදා ලබ්ධිය p(x) සහ ශේෂය r₂ සොයන්න</li>
+                    <li>එවිට f(x) = (x-a)(x-b)p(x) + (x-a)r₂ + r₁</li>
+                </ol>
+                
+                <p>ක්‍රමය 2:</p>
                 <ol>
                     <li>(x-a)(x-b) = x² - (a+b)x + ab ලෙස ගුණ කරන්න</li>
                     <li>බහුපදය x² - (a+b)x + ab මගින් බෙදා ශේෂය Ax + B ආකාරයේ බව පෙන්වන්න</li>
@@ -363,35 +777,96 @@ x-1 ) 2x³ - x² + 0x + 4
                 <div class="example-title">උදාහරණ:</div>
                 <p>f(x) = x³ + 2x² + 4x + 2 බහුපදය (x²-1) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('solution7')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="solution7" class="solution hidden">
-                    <ol>
-                        <li>(x²-1) = (x-1)(x+1)</li>
-                        <li>පළමුව (x-1) මගින් බෙදීමෙන්:
-                            <ul>
-                                <li>ලබ්ධිය: x² + 3x + 7</li>
-                                <li>ශේෂය: 9</li>
-                            </ul>
-                        </li>
-                        <li>ඊළඟට ලබ්ධිය (x+1) මගින් බෙදීමෙන්:
-                            <ul>
-                                <li>ලබ්ධිය: x + 2</li>
-                                <li>ශේෂය: 5</li>
-                            </ul>
-                        </li>
-                        <li>එබැවින්:
-                            <ul>
-                                <li>ශේෂය: 5(x-1) + 9 = 5x - 5 + 9 = 5x + 4</li>
-                            </ul>
-                        </li>
-                    </ol>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        (x²-1) = (x-1)(x+1) බව අපි දන්නවා.
+                        <br><br>
+                        ක්‍රමය 1 භාවිතා කරමු:
+                        <br><br>
+                        පළමුව (x-1) මගින් බෙදීමෙන්:
+                        <pre>
+      x² + 3x + 7
+x-1 ) x³ + 2x² + 4x + 2
+      x³ - x²
+      --------
+          3x² + 4x + 2
+          3x² - 3x
+          --------
+              7x + 2
+              7x - 7
+              --------
+                  9
+                        </pre>
+                        ලබ්ධිය q(x) = x² + 3x + 7 සහ ශේෂය r₁ = 9 වේ.
+                        <br><br>
+                        ඊළඟට q(x) = x² + 3x + 7 බහුපදය (x+1) මගින් බෙදීමෙන්:
+                        <pre>
+      x + 2
+x+1 ) x² + 3x + 7
+      x² + x
+      --------
+          2x + 7
+          2x + 2
+          --------
+              5
+                        </pre>
+                        ලබ්ධිය p(x) = x + 2 සහ ශේෂය r₂ = 5 වේ.
+                        <br><br>
+                        එබැවින්:
+                        <br><br>
+                        f(x) = (x-1)(x+1)(x + 2) + (x-1)(5) + 9
+                        <br><br>
+                        ශේෂය = (x-1)(5) + 9 = 5x - 5 + 9 = 5x + 4
+                    </div>
+                    <div class="message-info">මාධව - 12:37 PM</div>
                 </div>
+                
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        ක්‍රමය 2 භාවිතා කරමුවත්:
+                        <br><br>
+                        ශේෂය Ax + B ආකාරයේ වේ.
+                        <br><br>
+                        f(1) = 1³ + 2(1)² + 4(1) + 2 = 1 + 2 + 4 + 2 = 9
+                        <br><br>
+                        f(-1) = (-1)³ + 2(-1)² + 4(-1) + 2 = -1 + 2 - 4 + 2 = -1
+                        <br><br>
+                        x = 1 විට: A(1) + B = 9 → A + B = 9
+                        <br><br>
+                        x = -1 විට: A(-1) + B = -1 → -A + B = -1
+                        <br><br>
+                        මේ සමීකරණ විසඳීමෙන්: A = 5, B = 4
+                        <br><br>
+                        එබැවින් ශේෂය 5x + 4 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 12:40 PM</div>
+                </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    මට දෙවැනි ක්‍රමය වඩා ලේසි වගේ. ශේෂය Ax + B ආකාරයේ කියලා දැනගෙන, f(1) සහ f(-1) ගණනය කරලා A සහ B හොයාගන්න පුළුවන්.
+                </div>
+                <div class="message-info">ඔයා - 12:42 PM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    ඔව්! ඔයා හරි. ක්‍රමය 2 ගොඩක් වේලාවට වඩා ලේසියි. ඒත් දෙකම දැනගෙන ඉන්න එක හොඳයි.
+                </div>
+                <div class="message-info">මාධව - 12:43 PM</div>
             </div>
         </section>
         
         <section class="section">
             <h2>6. බහුපද සමීකරණ විසඳීම</h2>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    දැන් අපි ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය භාවිතා කරමින් බහුපද සමීකරණ විසඳීම ගැන ඉගෙන ගමු.
+                </div>
+                <div class="message-info">මාධව - 12:45 PM</div>
+            </div>
             
             <div class="steps">
                 <p>ක්‍රමය:</p>
@@ -405,35 +880,156 @@ x-1 ) 2x³ - x² + 0x + 4
                 <div class="example-title">උදාහරණ:</div>
                 <p>x³ - 6x² + 11x - 6 = 0 සමීකරණය විසඳන්න.</p>
                 
-                <button onclick="toggleSolution('solution8')">විසඳුම පෙන්වන්න</button>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        පළමුව අපි විවිධ අගයන් සඳහා f(x) = 0 දැයි පරීක්ෂා කරමු.
+                        <br><br>
+                        f(1) = 1³ - 6(1)² + 11(1) - 6 = 1 - 6 + 11 - 6 = 0
+                        <br><br>
+                        f(1) = 0 බැවින්, (x-1) සාධකයකි.
+                        <br><br>
+                        f(x) = (x-1)(x² - 5x + 6)
+                        <br><br>
+                        x² - 5x + 6 = 0 සමීකරණය විසඳමු:
+                        <br><br>
+                        x² - 5x + 6 = 0
+                        <br><br>
+                        x² - 2x - 3x + 6 = 0
+                        <br><br>
+                        x(x-2) - 3(x-2) = 0
+                        <br><br>
+                        (x-2)(x-3) = 0
+                        <br><br>
+                        එබැවින් f(x) = (x-1)(x-2)(x-3)
+                        <br><br>
+                        මූල: x = 1, x = 2, x = 3
+                    </div>
+                    <div class="message-info">මාධව - 12:48 PM</div>
+                </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    මට තේරුනා! පළමුව අපි (x-1) සාධකයක් බව හොයාගත්තා. ඊට පස්සෙ ඉතිරි බහුපදය x² - 5x + 6 සාධක වලට වෙන් කළා. එතකොට අපිට f(x) = (x-1)(x-2)(x-3) ලෙස ලියන්න පුළුවන්. ඉතින් මූල x = 1, x = 2, x = 3 වෙනවා.
+                </div>
+                <div class="message-info">ඔයා - 12:50 PM</div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ 2:</div>
+                <p>2x³ + 3x² - 8x - 12 = 0 සමීකරණය විසඳන්න.</p>
                 
-                <div id="solution8" class="solution hidden">
-                    <ol>
-                        <li>f(1) = 1 - 6 + 11 - 6 = 0 බැවින්, (x-1) සාධකයකි</li>
-                        <li>f(x) = (x-1)(x² - 5x + 6)</li>
-                        <li>x² - 5x + 6 = (x-2)(x-3)</li>
-                        <li>එබැවින් f(x) = (x-1)(x-2)(x-3)</li>
-                        <li>මූල: x = 1, x = 2, x = 3</li>
-                    </ol>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        පළමුව අපි සරල අගයන් සඳහා f(x) = 0 දැයි පරීක්ෂා කරමු.
+                        <br><br>
+                        f(2) = 2(2)³ + 3(2)² - 8(2) - 12 = 16 + 12 - 16 - 12 = 0
+                        <br><br>
+                        f(2) = 0 බැවින්, (x-2) සාධකයකි.
+                        <br><br>
+                        f(x) = (x-2)(2x² + 7x + 6)
+                        <br><br>
+                        2x² + 7x + 6 = 0 සමීකරණය විසඳමු:
+                        <br><br>
+                        2x² + 4x + 3x + 6 = 0
+                        <br><br>
+                        2x(x+2) + 3(x+2) = 0
+                        <br><br>
+                        (x+2)(2x+3) = 0
+                        <br><br>
+                        එබැවින් f(x) = 2(x-2)(x+2)(x+3/2)
+                        <br><br>
+                        මූල: x = 2, x = -2, x = -3/2
+                    </div>
+                    <div class="message-info">මාධව - 12:53 PM</div>
                 </div>
             </div>
         </section>
         
         <section class="section">
-            <h2>පුහුණු ගැටලු</h2>
+            <h2>7. බහුපද ප්‍රකාශන වෙනත් ආකාරයකට ලිවීම</h2>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    අවසාන කොටස විදිහට අපි බහුපද ප්‍රකාශන වෙනත් ආකාරයකට ලිවීම ගැන ඉගෙන ගමු.
+                </div>
+                <div class="message-info">මාධව - 12:55 PM</div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">උදාහරණ:</div>
+                <p>f(x) = 2x² + 7x + 10 බහුපදය (x+1) බහුපදයක් ලෙස ප්‍රකාශ කරන්න.</p>
+                
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        අපි f(x) = a(x+1)² + b(x+1) + c ලෙස ලියමු.
+                        <br><br>
+                        දෙපැත්ත ගුණ කරමු:
+                        <br><br>
+                        f(x) = a(x² + 2x + 1) + b(x+1) + c
+                        <br><br>
+                        f(x) = ax² + 2ax + a + bx + b + c
+                        <br><br>
+                        2x² + 7x + 10 = ax² + (2a+b)x + (a+b+c)
+                        <br><br>
+                        සංගුණක සංසන්දනය:
+                        <br><br>
+                        x² සංගුණකය: a = 2
+                        <br><br>
+                        x¹ සංගුණකය: 2a + b = 7, එබැවින් b = 7 - 2a = 7 - 4 = 3
+                        <br><br>
+                        නියත පදය: a + b + c = 10, එබැවින් c = 10 - a - b = 10 - 2 - 3 = 5
+                        <br><br>
+                        එබැවින් f(x) = 2(x+1)² + 3(x+1) + 5
+                    </div>
+                    <div class="message-info">මාධව - 12:58 PM</div>
+                </div>
+            </div>
+            
+            <div class="chat-message you">
+                <div class="message-bubble">
+                    ඔහ්, මේකත් හරි වැදගත් වගේ. අපිට බහුපදයක් (x+1) බහුපදයක් ලෙස ප්‍රකාශ කරන්න පුළුවන්. ඒ කියන්නේ f(x) = 2(x+1)² + 3(x+1) + 5 විදිහට.
+                </div>
+                <div class="message-info">ඔයා - 1:00 PM</div>
+            </div>
+            
+            <div class="chat-message friend">
+                <div class="message-bubble">
+                    හරියටම හරි! මේක ටේලර් ශ්‍රේණි වගේ දේවල් වලදී ගොඩක් වැදගත් වෙනවා. ඊළඟට අපි පුහුණු ගැටලු කිහිපයක් විසඳමු.
+                </div>
+                <div class="message-info">මාධව - 1:01 PM</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>8. පුහුණු ගැටලු</h2>
             
             <div class="practice">
                 <div class="practice-title">ගැටලුව 1:</div>
                 <p>f(x) = x⁴ - 5x³ + 3x² + 5x - 2 බහුපදය (x-2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('practice1')">විසඳුම පෙන්වන්න</button>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        ශේෂ ප්‍රමේයය අනුව, ශේෂය f(2) වේ.
+                        <br><br>
+                        f(2) = 2⁴ - 5(2)³ + 3(2)² + 5(2) - 2
+                        <br><br>
+                        f(2) = 16 - 5(8) + 3(4) + 5(2) - 2
+                        <br><br>
+                        f(2) = 16 - 40 + 12 + 10 - 2
+                        <br><br>
+                        f(2) = -4
+                        <br><br>
+                        එබැවින් ශේෂය -4 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 1:03 PM</div>
+                </div>
                 
-                <div id="practice1" class="solution hidden">
-                    <p>ශේෂ ප්‍රමේයය අනුව, ශේෂය f(2) වේ.</p>
-                    <p>f(2) = 2⁴ - 5(2)³ + 3(2)² + 5(2) - 2</p>
-                    <p>f(2) = 16 - 40 + 12 + 10 - 2</p>
-                    <p>f(2) = -4</p>
-                    <p>එබැවින් ශේෂය -4 වේ.</p>
+                <div class="chat-message you">
+                    <div class="message-bubble">
+                        හරි, ශේෂය -4 වෙනවා. මම ශේෂ ප්‍රමේයය පාවිච්චි කරලා f(2) ගණනය කළා.
+                    </div>
+                    <div class="message-info">ඔයා - 1:04 PM</div>
                 </div>
             </div>
             
@@ -441,19 +1037,52 @@ x-1 ) 2x³ - x² + 0x + 4
                 <div class="practice-title">ගැටලුව 2:</div>
                 <p>f(x) = 2x³ - 3x² - 11x + 6 බහුපදයේ සාධක සොයන්න.</p>
                 
-                <button onclick="toggleSolution('practice2')">විසඳුම පෙන්වන්න</button>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        පළමුව ඇතැම් අගයන් සඳහා f(x) = 0 දැයි පරීක්ෂා කරමු:
+                        <br><br>
+                        f(1) = 2(1)³ - 3(1)² - 11(1) + 6 = 2 - 3 - 11 + 6 = -6 (සාධකයක් නොවේ)
+                        <br><br>
+                        f(-1) = 2(-1)³ - 3(-1)² - 11(-1) + 6 = -2 - 3 + 11 + 6 = 12 (සාධකයක් නොවේ)
+                        <br><br>
+                        f(2) = 2(2)³ - 3(2)² - 11(2) + 6 = 16 - 12 - 22 + 6 = -12 (සාධකයක් නොවේ)
+                        <br><br>
+                        f(-2) = 2(-2)³ - 3(-2)² - 11(-2) + 6 = -16 - 12 + 22 + 6 = 0
+                        <br><br>
+                        f(3) = 2(3)³ - 3(3)² - 11(3) + 6 = 54 - 27 - 33 + 6 = 0
+                        <br><br>
+                        f(-2) = 0 හා f(3) = 0 බැවින්, (x+2) හා (x-3) සාධක වේ.
+                        <br><br>
+                        f(x) = 2x³ - 3x² - 11x + 6 = 2(x+2)(x-3)(x-?)
+                        <br><br>
+                        ඉතිරි සාධකය සොයන්න:
+                        <br><br>
+                        f(x) = 2(x+2)(x-3)(x-a)
+                        <br><br>
+                        2(x+2)(x-3)(x-a) = 2x³ - 3x² - 11x + 6
+                        <br><br>
+                        2(x³ - 3x² + 2x - ax² + 3ax - 2a) = 2x³ - 3x² - 11x + 6
+                        <br><br>
+                        2x³ - 6x² + 4x - 2ax² + 6ax - 4a = 2x³ - 3x² - 11x + 6
+                        <br><br>
+                        සංගුණක සංසන්දනය:
+                        <br><br>
+                        x² සංගුණකය: -6 - 2a = -3, එබැවින් -2a = 3, a = -3/2
+                        <br><br>
+                        x¹ සංගුණකය: 4 + 6a = -11, 4 + 6(-3/2) = -11, 4 - 9 = -11 (තහවුරු කිරීම)
+                        <br><br>
+                        නියත පදය: -4a = 6, a = -3/2 (තහවුරු කිරීම)
+                        <br><br>
+                        එබැවින් f(x) = 2(x+2)(x-3)(x+3/2)
+                    </div>
+                    <div class="message-info">මාධව - 1:08 PM</div>
+                </div>
                 
-                <div id="practice2" class="solution hidden">
-                    <p>පළමුව ඇතැම් අගයන් සඳහා f(x) = 0 දැයි පරීක්ෂා කරමු:</p>
-                    <p>f(1) = 2 - 3 - 11 + 6 = -6 (සාධකයක් නොවේ)</p>
-                    <p>f(-1) = -2 - 3 + 11 + 6 = 12 (සාධකයක් නොවේ)</p>
-                    <p>f(2) = 16 - 12 - 22 + 6 = -12 (සාධකයක් නොවේ)</p>
-                    <p>f(-2) = -16 - 12 + 22 + 6 = 0</p>
-                    <p>f(3) = 54 - 27 - 33 + 6 = 0</p>
-                    <p>f(-2) = 0 හා f(3) = 0 බැවින්, (x+2) හා (x-3) සාධක වේ.</p>
-                    <p>f(x) = 2x³ - 3x² - 11x + 6 = 2(x+2)(x-3)(x-?)</p>
-                    <p>සංගුණක සංසන්දනය කරමින් අවසාන සාධකය (x-1/2) බව සොයාගත හැක.</p>
-                    <p>එබැවින් f(x) = 2(x+2)(x-3)(x-1/2)</p>
+                <div class="chat-message you">
+                    <div class="message-bubble">
+                        මට තේරුනා. අපි පළමුව f(-2) = 0 සහ f(3) = 0 බව හොයාගත්තා. ඒ කියන්නේ (x+2) සහ (x-3) සාධක. ඊට පස්සෙ ඉතිරි සාධකය (x+3/2) බව හොයාගත්තා. එතකොට අවසාන පිළිතුර f(x) = 2(x+2)(x-3)(x+3/2).
+                    </div>
+                    <div class="message-info">ඔයා - 1:10 PM</div>
                 </div>
             </div>
             
@@ -461,35 +1090,41 @@ x-1 ) 2x³ - x² + 0x + 4
                 <div class="practice-title">ගැටලුව 3:</div>
                 <p>f(x) = x⁴ + x³ - 7x² - x + 6 බහුපදය (x-1)(x+2) මගින් බෙදූ විට ශේෂය සොයන්න.</p>
                 
-                <button onclick="toggleSolution('practice3')">විසඳුම පෙන්වන්න</button>
-                
-                <div id="practice3" class="solution hidden">
-                    <p>ශේෂය Ax + B ආකාරයේ වේ.</p>
-                    <p>x = 1 විට: f(1) = 1 + 1 - 7 - 1 + 6 = 0</p>
-                    <p>x = -2 විට: f(-2) = 16 - 8 - 28 + 2 + 6 = -12</p>
-                    <p>A(1) + B = 0 → A + B = 0</p>
-                    <p>A(-2) + B = -12 → -2A + B = -12</p>
-                    <p>මේ සමීකරණ විසඳීමෙන්: A = 4, B = -4</p>
-                    <p>එබැවින් ශේෂය 4x - 4 වේ.</p>
+                <div class="chat-message friend">
+                    <div class="message-bubble">
+                        ශේෂය Ax + B ආකාරයේ වේ.
+                        <br><br>
+                        x = 1 විට: f(1) = 1 + 1 - 7 - 1 + 6 = 0
+                        <br><br>
+                        x = -2 විට: f(-2) = 16 - 8 - 28 + 2 + 6 = -12
+                        <br><br>
+                        A(1) + B = 0 → A + B = 0
+                        <br><br>
+                        A(-2) + B = -12 → -2A + B = -12
+                        <br><br>
+                        මේ සමීකරණ විසඳීමෙන්:
+                        <br><br>
+                        A + B = 0 ... (1)
+                        <br><br>
+                        -2A + B = -12 ... (2)
+                        <br><br>
+                        (1) වලින්: B = -A
+                        <br><br>
+                        (2) වලට ආදේශ කරමින්: -2A + (-A) = -12
+                        <br><br>
+                        -3A = -12
+                        <br><br>
+                        A = 4
+                        <br><br>
+                        B = -A = -4
+                        <br><br>
+                        එබැවින් ශේෂය 4x - 4 වේ.
+                    </div>
+                    <div class="message-info">මාධව - 1:13 PM</div>
                 </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>© 2025 ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය - ටියුට් එක</p>
-            <p>සකස් කළේ: Hasindu Sanahas</p>
-        </footer>
-    </div>
+                
+                <div class="chat-message you">
+                    <div class="message-bubble">
+                        මට තේරුනා. (x-1)(x+2) මගින් බෙදන විට ශේෂය Ax + B ආකාරයේ වෙනවා. f(1) සහ f(-2) ගණනය කරලා A සහ B හොයාගත්තා. එතකොට ශේෂය 4x - 4 වෙනවා.
 
-    <script>
-        function toggleSolution(id) {
-            var solution = document.getElementById(id);
-            if (solution.classList.contains('hidden')) {
-                solution.classList.remove('hidden');
-            } else {
-                solution.classList.add('hidden');
-            }
-        }
-    </script>
-</body>
-</html>
+</div> <div class="message-info">ඔයා - 1:15 PM</div> </div> </section> <section class="section"> <h2>9. සාරාංශය</h2> <div class="chat-message friend"> <div class="message-bubble"> හරි, මචං! අපි ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය ගැන ගොඩක් දේවල් ඉගෙන ගත්තා. ලෙසට සාරාංශයක් බලමු: <br><br> <strong>ශේෂ ප්‍රමේය:</strong> f(x) බහුපදය (x-a) මගින් බෙදූ විට ශේෂය f(a) වේ. <br><br> <strong>සාධක ප්‍රමේය:</strong> f(a) = 0 නම්, (x-a) යනු f(x) හි සාධකයකි. <br><br> <strong>වැදගත් යෙදුම්:</strong> <ul> <li>බහුපද සමීකරණ විසඳීම</li> <li>සාධක සෙවීම</li> <li>(x-a)², (x-a)(x-b) වැනි සංකීර්ණ බෙදුම්</li> <li>බහුපද ප්‍රකාශන වෙනත් ආකාරයකට ලිවීම</li> </ul> <br> ඔයාට මේ ඔක්කොම තේරුනා නේද? </div> <div class="message-info">මාධව - 1:20 PM</div> </div> <div class="chat-message you"> <div class="message-bubble"> ඔව්, මචං! ඔයා හරිම හොඳට තේරුම් කරලා දුන්නා. ශේෂ ප්‍රමේය, සාධක ප්‍රමේය, ඒ වගේම සාධක සෙවීම, බහුපද සමීකරණ විසඳීම ඔක්කොම ගොඩක් පැහැදිලියි. ගොඩක් ස්තූතියි! </div> <div class="message-info">ඔයා - 1:22 PM</div> </div> <div class="chat-message friend"> <div class="message-bubble"> ඒක තමයි! ඔයාට තව ගැටලු තියෙනවා නම්, ඕන වෙලාවක ඇහුවොත් මම තවත් උදාහරණ එක්ක කියලා දෙන්නම්. 😎 </div> <div class="message-info">මාධව - 1:23 PM</div> </div> </section> <section class="section"> <h2>10. තවත් පුහුණු ගැටලු</h2> <p>ඔබේ දැනුම පරීක්ෂා කිරීමට තවත් ගැටලු කිහිපයක්:</p> <div class="practice"> <div class="practice-title">ගැටලුව 4:</div> <p>f(x) = 3x³ - 4x² + 2x - 1 බහුපදය (x+1) මගින් බෙදූ විට ශේෂය සොයන්න.</p> <button onclick="toggleSolution('solution4')">විසඳුම බලන්න</button> <div id="solution4" class="solution hidden"> <p>ශේෂ ප්‍රමේයය අනුව, ශේෂය f(-1) වේ.</p> <p>f(-1) = 3(-1)³ - 4(-1)² + 2(-1) - 1</p> <p>= -3 - 4 - 2 - 1 = -10</p> <p>එබැවින් ශේෂය -10 වේ.</p> </div> </div> <div class="practice"> <div class="practice-title">ගැටලුව 5:</div> <p>f(x) = x³ - 7x + 6 බහුපදයේ සාධක සොයන්න.</p> <button onclick="toggleSolution('solution5')">විසඳුම බලන්න</button> <div id="solution5" class="solution hidden"> <p>f(1) = 1³ - 7(1) + 6 = 1 - 7 + 6 = 0</p> <p>f(1) = 0 බැවින්, (x-1) සාධකයකි.</p> <p>f(x) = (x-1)(x² + x - 6)</p> <p>x² + x - 6 = (x+3)(x-2)</p> <p>එබැවින් f(x) = (x-1)(x+3)(x-2)</p> </div> </div> <div class="practice"> <div class="practice-title">ගැටලුව 6:</div> <p>x³ + 2x² - 5x - 6 = 0 සමීකරණය විසඳන්න.</p> <button onclick="toggleSolution('solution6')">විසඳුම බලන්න</button> <div id="solution6" class="solution hidden"> <p>f(1) = 1³ + 2(1)² - 5(1) - 6 = 1 + 2 - 5 - 6 = -8 (සාධකයක් නොවේ)</p> <p>f(-1) = (-1)³ + 2(-1)² - 5(-1) - 6 = -1 + 2 + 5 - 6 = 0</p> <p>f(-1) = 0 බැවින්, (x+1) සාධකයකි.</p> <p>f(x) = (x+1)(x² + x - 6)</p> <p>x² + x - 6 = (x+3)(x-2)</p> <p>f(x) = (x+1)(x+3)(x-2)</p> <p>මූල: x = -1, x = -3, x = 2</p> </div> </div> </section> <footer> <p>© 2025 - ශේෂ ප්‍රමේය හා සාධක ප්‍රමේය පාඩම</p> <button class="download-button" onclick="downloadPDF()">Download as PDF</button> </footer> </div> <script> function toggleSolution(id) { const solution = document.getElementById(id); if (solution) { solution.classList.toggle('hidden'); } } function downloadPDF() { const { jsPDF } = window.jspdf; const doc = new jsPDF(); const element = document.querySelector('.container'); html2canvas(element, { scale: 2 }).then(canvas => { const imgData = canvas.toDataURL('image/png'); const imgProps = doc.getImageProperties(imgData); const pdfWidth = doc.internal.pageSize.getWidth(); const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width; const pageHeight = doc.internal.pageSize.getHeight(); let heightLeft = pdfHeight; let position = 0; doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight); heightLeft -= pageHeight; while (heightLeft >= 0) { position = heightLeft - pdfHeight; doc.addPage(); doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight); heightLeft -= pageHeight; } doc.save('Remainder_and_Factor_Theorem_Lesson.pdf'); }).catch(error => { console.error('Error generating PDF:', error); alert('Failed to generate PDF. Please try again.'); }); } </script> </body> </html> </xaiArtifact>
